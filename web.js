@@ -2,15 +2,12 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
-fs.readFile('./index.html', function (err, data) {
-  if (err) throw err;
-  
-});
+var buf1 = 
 
 app.get('/', function(request, response) {
   fs.readFile('./index.html', function (err, data) {
-  if (err) throw err;
-    response.send(data);
+    if (err) throw err;
+    console.log(data);
   });
 });
 
